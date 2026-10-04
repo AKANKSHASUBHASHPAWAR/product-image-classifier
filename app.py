@@ -20,7 +20,7 @@ st.set_page_config(
 @st.cache_resource
 def load_classifier():
     model_file = "product_classifier.keras"
-    model = tf.keras.models.load_model(model_file)
+    model = tf.keras.models.load_model(model_file, compile=False)
     labels_file = "labels.json"
     if os.path.exists(labels_file):
         with open(labels_file, "r") as f:
